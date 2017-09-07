@@ -1,5 +1,3 @@
-
-
 body {
 	font-family: menlo, monaco;
 	background: #3866af;
@@ -63,12 +61,11 @@ a, a:hover {
 }
 
 .blink {
-	animation: blink-animation 1s steps(2, start) infinite;
-	-webkit-animation: blink-animation 1s steps(4, start) infinite;
-	-moz-animation: blink-animation 1s steps(2, start) infinite;
-	-o-animation: blink-animation 1s steps(2, start) infinite;
+	animation: blink-animation 1.25s steps(2, start) infinite;
+	-webkit-animation: blink-animation 1.25s steps(2, start) infinite;
+	-moz-animation: blink-animation 1.25s steps(2, start) infinite;
+	-o-animation: blink-animation 1.25s steps(2, start) infinite;
 }
-
 @keyframes blink-animation {
 	0% {
      	background-color:#3866af;

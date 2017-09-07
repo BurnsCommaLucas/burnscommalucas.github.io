@@ -6,12 +6,28 @@ body {
 	color: #ffebb5;
 }
 
-@media (min-width: 600px){
+.header-styled {
+	padding: 3%;
+	font-size: 4.5em;
+}
+
+a, a:hover {
+	color: white;
+}
+
+.fa{ 
+	padding: 3%;
+}
+
+@media (min-width: 576px){
 	.footer {
 		font-size: 2vw;
+		position: absolute;
+		bottom: 0;
+		padding-bottom: 5em;
 	}
 	h1 {
-		font-size: 5.5vw;
+		font-size: 5vw;
 	}
 	a {
 		font-size: 1.5em;	
@@ -25,7 +41,7 @@ body {
 	}
 }
 
-@media (max-width: 600px){
+@media (max-width: 576px){
 	.footer {
 		font-size: 5vw;
 		justify-content: center;
@@ -39,22 +55,89 @@ body {
 	}
 	
 	p {
-		font-size: 3.5vw;
+		font-size: 5vw;
 	}
 	.icon_wrapper {
 		justify-content: center;
 	}
 }
 
-.header-styled {
-	padding: 3%;
-	font-size: 4.5em;
+.blink {
+	animation: blink-animation 1s steps(2, start) infinite;
+	-webkit-animation: blink-animation 1s steps(4, start) infinite;
+	-moz-animation: blink-animation 1s steps(2, start) infinite;
+	-o-animation: blink-animation 1s steps(2, start) infinite;
 }
 
-a, a:hover {
-	color: white;
+@keyframes blink-animation {
+	0% {
+     	background-color:#3866af;
+    	color:#ffebb5;
+  	}
+	50% {
+		background-color:#3866af;
+    	color:#ffebb5;
+	}
+	51%{
+		background-color: #ffebb5;
+    	color:#3866af;
+	}
+	100% {
+		background-color: #ffebb5;
+    	color:#3866af;
+	}
 }
-
-.fa{ 
-	padding: 3%;
+@-webkit-keyframes blink-animation {
+	0% {
+     	background-color:#3866af;
+    	color:#ffebb5;
+  	}
+	50% {
+		background-color:#3866af;
+    	color:#ffebb5;
+	}
+	51%{
+		background-color: #ffebb5;
+    	color:#3866af;
+	}
+	100% {
+		background-color: #ffebb5;
+    	color:#3866af;
+	}
+}
+@-moz-keyframes blink-animation {
+	0% {
+     	background-color:#3866af;
+    	color:#ffebb5;
+  	}
+	50% {
+		background-color:#3866af;
+    	color:#ffebb5;
+	}
+	51%{
+		background-color: #ffebb5;
+    	color:#3866af;
+	}
+	100% {
+		background-color: #ffebb5;
+    	color:#3866af;
+	}
+}
+@-o-keyframes blink-animation {
+	0% {
+     	background-color:#3866af;
+    	color:#ffebb5;
+  	}
+	50% {
+		background-color:#3866af;
+    	color:#ffebb5;
+	}
+	51%{
+		background-color: #ffebb5;
+    	color:#3866af;
+	}
+	100% {
+		background-color: #ffebb5;
+    	color:#3866af;
+	}
 }

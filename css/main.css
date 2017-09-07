@@ -1,0 +1,29 @@
+
+
+body {
+	font-family: menlo, monaco;
+	background: #3866af;
+	color: #ffebb5;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	padding-bottom: 10%;
+}
+
+.header-styled {
+	padding: 20px;
+	font-size: 4.5em
+}
+
+@media (max-width: 768px){
+	.header-styled{
+		font-size: 10vw;
+	}
+}
+
+a, a:hover {
+	color: white;
+	
+}

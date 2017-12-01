@@ -1,5 +1,5 @@
 body {
-	font-family: menlo, monaco;
+	font-family: menlo, monaco, "DejaVu Sans Mono", "Lucida Console", "Andale Mono", monospace, consolas;
 	background: #3866af;
 	color: #ffebb5;
 }

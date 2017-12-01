@@ -10,56 +10,84 @@ body {
 }
 
 a, a:hover {
+	color: #ffebb5;
+	text-decoration: none;
+}
+
+p > a {
+	color:#ffebb5;
+}
+
+.fa { 
+	padding: 3%;
 	color: white;
 }
 
-.fa{ 
-	padding: 3%;
+li.nav-item > a:hover {
+	background-color: #ffebb5;
+	color:#3866af;
 }
 
+.sep {
+	color: white; 
+}
+
+/* Large screen */
 @media (min-width: 576px){
-	.footer {
-		font-size: 2vw;
-		position: absolute;
-		bottom: 0;
-		padding-bottom: 5em;
-	}
 	h1 {
 		font-size: 5vw;
 	}
-	a {
-		font-size: 1.5em;	
-	}
+	
 	.fa {
 		font-size: 8vw;
 	}
-	p{
-		max-width: 80%;	
-		font-size: 2vw;
+	
+	p {
+		font-size: 2em;
+	}
+	
+	p > a { /* Really just the links in the About blurb */
+		font-size: 1em;
+		border-bottom: .2vw dotted #ffebb5;
+		text-decoration: none;
+	}
+	
+	.footer {
+		font-size: 2em;
 	}
 }
 
+/* Small screen */
 @media (max-width: 576px){
-	.footer {
-		font-size: 5vw;
-		justify-content: center;
-	}
 	h1 {
 		font-size: 10vw;
 		text-align: center;
 	}
+	
 	.fa{
 		font-size: 12vw;
 	}
 	
 	p {
-		font-size: 5vw;
+		font-size: 1.8em;
 	}
+	
 	.icon_wrapper {
+		justify-content: center;
+	}
+	
+	p > a {
+		border-bottom: .08em dotted #ffebb5;
+		text-decoration: none;
+	}
+	
+	.footer {
+		font-size: 5vw;
 		justify-content: center;
 	}
 }
 
+/* Terminal Blink animation applied to span.blink */
 .blink {
 	animation: blink-animation 1.25s steps(2, start) infinite;
 	-webkit-animation: blink-animation 1.25s steps(2, start) infinite;

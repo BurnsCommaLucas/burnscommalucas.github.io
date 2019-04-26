@@ -1,0 +1,42 @@
+<!--<nav class='navbar navbar-expand-md navbar-dark fixed-top'>
+  <ngb-tabset type='pills'>
+    <ngb-tab title='lucas.burns.io'>
+      <ng-template ngbTabContent>
+        <p>Its Home text</p>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title='About'>
+      <ng-template ngbTabContent>
+        <p>Its About text</p>      
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title='Resume'>
+      <ng-template ngbTabContent>
+        <p>Its Resume text</p>      
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title='Contact'>
+      <ng-template ngbTabContent>
+        <p>Its Contact text</p>      
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</nav>
+-->
+<nav class="navbar navbar-expand-md navbar-toggleable-md">
+    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+            aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      <span><fa-icon [icon]="bars"></fa-icon></span>
+    </button>
+    <a class="navbar-brand">lucas.burns.io</a>
+    <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="exCollapsingNavbar2">
+      <div class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" routerLink='./home'>Home</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink='./about'>About</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink='./resume'>Resume</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink='./contact'>Contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+<router-outlet></router-outlet>

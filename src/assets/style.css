@@ -1,0 +1,144 @@
+:root {
+	--cream: #ffebb5;
+	--blue: #3866af;
+}
+
+body {
+	font-family: menlo, monaco, "DejaVu Sans Mono", "Lucida Console", "Andale Mono", monospace, consolas;
+	background: var(--blue);
+	color: var(--cream);
+}
+
+.navbar, fa-icon, li.nav-item {
+	background: var(--cream);
+	color: var(--blue);
+}
+
+li.nav-item > a:hover {
+	background-color: var(--blue);
+	color:var(--cream);
+}
+
+.header {
+	font-size: 4.5em;
+}
+
+.fitted {
+	padding: 3%;
+}
+
+a:hover:not(.navbar-brand) {
+	color: var(--cream);
+	background: var(--blue);
+	text-decoration: none;
+}
+
+.navbar-brand {
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+p > a {
+	color: var(--blue);
+	background: var(--cream);
+	border-bottom: 1.5px dotted var(--cream);
+	text-decoration: none;
+}
+
+#contact-icons > a > fa-icon {
+	padding: 10px;
+	color: white;
+}
+
+.invisible {
+	opacity: 0;
+	height: 0px; 
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Terminal Blink animation applied to span.blink */
+.blink {
+	animation: blink-animation 1.25s steps(2, start) infinite;
+	-webkit-animation: blink-animation 1.25s steps(2, start) infinite;
+	-moz-animation: blink-animation 1.25s steps(2, start) infinite;
+	-o-animation: blink-animation 1.25s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+	0% {
+     	background-color:var(--blue);
+    	color:var(--cream);
+  	}
+	50% {
+		background-color:var(--blue);
+    	color:var(--cream);
+	}
+	51%{
+		background-color: var(--cream);
+    	color:var(--blue);
+	}
+	100% {
+		background-color: var(--cream);
+    	color:var(--blue);
+	}
+}
+@-webkit-keyframes blink-animation {
+	0% {
+     	background-color:var(--blue);
+    	color:var(--cream);
+  	}
+	50% {
+		background-color:var(--blue);
+    	color:var(--cream);
+	}
+	51%{
+		background-color: var(--cream);
+    	color:var(--blue);
+	}
+	100% {
+		background-color: var(--cream);
+    	color:var(--blue);
+	}
+}
+@-moz-keyframes blink-animation {
+	0% {
+     	background-color:var(--blue);
+    	color:var(--cream);
+  	}
+	50% {
+		background-color:var(--blue);
+    	color:var(--cream);
+	}
+	51%{
+		background-color: var(--cream);
+    	color:var(--blue);
+	}
+	100% {
+		background-color: var(--cream);
+    	color:var(--blue);
+	}
+}
+@-o-keyframes blink-animation {
+	0% {
+     	background-color:var(--blue);
+    	color:var(--cream);
+  	}
+	50% {
+		background-color:var(--blue);
+    	color:var(--cream);
+	}
+	51%{
+		background-color: var(--cream);
+    	color:var(--blue);
+	}
+	100% {
+		background-color: var(--cream);
+    	color:var(--blue);
+	}
+}
+
+.debug {
+	border: solid red 1px;
+}

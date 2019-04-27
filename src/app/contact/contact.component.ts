@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { faLinkedin, faGithubSquare, faTwitch } from '@fortawesome/free-brands-svg-icons';
-import {  } from '@fortawesome/fontawesome-svg-core';
 
 @Component({
   selector: 'app-contact',

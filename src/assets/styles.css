@@ -1,0 +1,181 @@
+:root {
+	--primary: #3866af;
+	--secondary: #ffebb5;
+}
+
+body {
+	font-family: menlo, monaco, "DejaVu Sans Mono", "Lucida Console", "Andale Mono", monospace, consolas;
+	background: var(--primary);
+	color: var(--secondary);
+}
+
+#color-picker {
+    padding: 20px;
+    padding-left: 30px;
+    margin-bottom: -30px;
+}
+
+.navbar, 
+button > fa-icon, 
+li.nav-item,
+li.nav-item > a,
+li.nav-item > a > fa-icon {
+	background: var(--secondary);
+	color: var(--primary);
+}
+
+li.nav-item > a.nav-link {
+	padding-inline-start: 10px;
+}
+
+li.nav-item > a:hover, 
+li.nav-item > a:hover > fa-icon {
+	background-color: var(--primary);
+    color:var(--secondary);
+    border-radius:5px;
+}
+
+.header {
+	font-size: 4.5em;
+}
+
+.fitted {
+	padding: 3%;
+}
+
+a:not(.navbar-brand), a:hover:not(.navbar-brand) {
+	color: var(--secondary);
+	background: var(--primary);
+	text-decoration: none;
+}
+
+.unclickable {
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
+p > a {
+	color: var(--primary);
+	background: var(--secondary);
+	border-bottom: 1.5px dotted var(--secondary);
+	text-decoration: none;
+}
+
+#contact-icons {
+    padding-top: 15px;
+}
+
+#contact-icons > a > fa-icon, #contact-icons > a {
+    padding-right: 15px;
+	color: var(--secondary);
+	background: var(--primary);
+}
+
+.invisible {
+	opacity: 0;
+	height: 0px; 
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Terminal Blink animation applied to span.blink */
+.blink {
+	animation: blink-animation 1.25s steps(2, start) infinite;
+	-webkit-animation: blink-animation 1.25s steps(2, start) infinite;
+	-moz-animation: blink-animation 1.25s steps(2, start) infinite;
+	-o-animation: blink-animation 1.25s steps(2, start) infinite;
+}
+@keyframes blink-animation {
+	0% {
+     	background-color:var(--primary);
+    	color:var(--secondary);
+		opacity: 100;
+  	}
+	50% {
+		background-color:var(--primary);
+    	color:var(--secondary);
+		opacity: 100;
+	}
+	51%{
+		background-color: var(--secondary);
+    	color:var(--primary);
+		opacity: 0;
+	}
+	100% {
+		background-color: var(--secondary);
+    	color:var(--primary);
+		opacity: 0;
+	}
+}
+@-webkit-keyframes blink-animation {
+	0% {
+     	background-color:var(--primary);
+    	color:var(--secondary);
+		opacity: 100;
+  	}
+	50% {
+		background-color:var(--primary);
+    	color:var(--secondary);
+		opacity: 100;
+	}
+	51%{
+		background-color: var(--secondary);
+    	color:var(--primary);
+		opacity: 0;
+	}
+	100% {
+		background-color: var(--secondary);
+    	color:var(--primary);
+		opacity: 0;
+	}
+}
+@-moz-keyframes blink-animation {
+	0% {
+     	background-color:var(--primary);
+    	color:var(--secondary);
+		opacity: 100;
+  	}
+	50% {
+		background-color:var(--primary);
+    	color:var(--secondary);
+		opacity: 100;
+	}
+	51%{
+		background-color: var(--secondary);
+    	color:var(--primary);
+		opacity: 0;
+	}
+	100% {
+		background-color: var(--secondary);
+    	color:var(--primary);
+		opacity: 0;
+	}
+}
+@-o-keyframes blink-animation {
+	0% {
+     	background-color:var(--primary);
+    	color:var(--secondary);
+		opacity: 100;
+  	}
+	50% {
+		background-color:var(--primary);
+    	color:var(--secondary);
+		opacity: 100;
+	}
+	51%{
+		background-color: var(--secondary);
+    	color:var(--primary);
+		opacity: 0;
+	}
+	100% {
+		background-color: var(--secondary);
+    	color:var(--primary);
+		opacity: 0;
+	}
+}
+
+.debug {
+	border: solid red 1px;
+}

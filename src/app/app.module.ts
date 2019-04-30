@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { appRoutes } from './routes';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -23,6 +24,7 @@ import { ResumeComponent } from './resume/resume.component';
     BrowserModule,
     NgbModule,
     FontAwesomeModule,
+    ColorPickerModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [],

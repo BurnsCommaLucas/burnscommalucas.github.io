@@ -1,42 +1,29 @@
-<!--<nav class='navbar navbar-expand-md navbar-dark fixed-top'>
-  <ngb-tabset type='pills'>
-    <ngb-tab title='lucas.burns.io'>
-      <ng-template ngbTabContent>
-        <p>Its Home text</p>
-      </ng-template>
-    </ngb-tab>
-    <ngb-tab title='About'>
-      <ng-template ngbTabContent>
-        <p>Its About text</p>      
-      </ng-template>
-    </ngb-tab>
-    <ngb-tab title='Resume'>
-      <ng-template ngbTabContent>
-        <p>Its Resume text</p>      
-      </ng-template>
-    </ngb-tab>
-    <ngb-tab title='Contact'>
-      <ng-template ngbTabContent>
-        <p>Its Contact text</p>      
-      </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
-</nav>
--->
 <nav class="navbar navbar-expand-md navbar-toggleable-md">
-    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
-            aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-      <span><fa-icon [icon]="bars"></fa-icon></span>
-    </button>
-    <a class="navbar-brand">lucas.burns.io</a>
-    <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="exCollapsingNavbar2">
-      <div class="navbar-nav mr-auto">
-          <li class="nav-item"><a class="nav-link" routerLink='./home'>Home</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink='./about'>About</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink='./resume'>Resume</a></li>
-          <li class="nav-item"><a class="nav-link" routerLink='./contact'>Contact</a></li>
-      </div>
+  <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+          aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+    <fa-icon [icon]="bars"></fa-icon>
+  </button>
+  <a class="navbar-brand unclickable">lucas.burns.io</a>
+  <div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="exCollapsingNavbar2">
+    <div class="navbar-nav mr-auto">
+      <li class="nav-item"><a class="nav-link" routerLink='./home' (click)='isNavbarCollapsed = true'>Home</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink='./about' (click)='isNavbarCollapsed = true'>About</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink='./resume' (click)='isNavbarCollapsed = true'>Resume</a></li>
+      <li class="nav-item"><a class="nav-link" routerLink='./contact' (click)='isNavbarCollapsed = true'>Contact</a></li>
+      <li class="nav-item"><a class="nav-link" (click)='hidePicker = !hidePicker'><fa-icon [icon]="palette"></fa-icon></a></li>
     </div>
-  </nav>
+  </div>
+</nav>
+<div [hidden]="hidePicker" class="row" id="color-picker">
+  <div class="col-xs-2" style="text-align: right;">
+    <p>Primary: </p>
+    <p style="margin-top: -6px;">Secondary: </p>
+  </div>
+  <div class="col-xs-2">
+    <input [cpAlphaChannel]="'disabled'" (colorPickerChange)="primaryChanged($event)" [(colorPicker)]="primary" [style.background]="primary"/>
+    <br>
+    <input [cpAlphaChannel]="'disabled'" (colorPickerChange)="secondaryChanged($event)" [(colorPicker)]="secondary" [style.background]="secondary"/>
+  </div>
+</div>
 
 <router-outlet></router-outlet>

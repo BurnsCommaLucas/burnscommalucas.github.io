@@ -1,13 +1,14 @@
 {
   "name": "personal-site",
-  "engines": {
-    "node": "^8.10.0",
-    "npm": "^3.5.2"
-  },
   "version": "0.0.0",
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "heroku-postbuild": "ng build --prod",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -16,8 +17,10 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.2.0",
+    "@angular/cli": "^7.3.8",
     "@angular/common": "~7.2.0",
     "@angular/compiler": "~7.2.0",
+    "@angular/compiler-cli": "^7.2.14",
     "@angular/core": "~7.2.0",
     "@angular/forms": "~7.2.0",
     "@angular/platform-browser": "~7.2.0",
@@ -29,20 +32,26 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@ng-bootstrap/ng-bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
+    "ngx-color-picker": "^7.5.0",
+    "path": "^0.12.7",
     "rxjs": "~6.3.3",
+    "simple-pdf-viewer": "^2.0.3",
     "tslib": "^1.9.0",
     "typed.js": "^2.0.10",
+    "typescript": "~3.2.2",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",
-    "@angular/cli": "~7.3.8",
-    "@angular/compiler-cli": "~7.2.0",
+    "@angular/cli": "^7.3.8",
+    "@angular/compiler-cli": "^7.2.14",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
+    "enhanced-resolve": "^4.1.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",

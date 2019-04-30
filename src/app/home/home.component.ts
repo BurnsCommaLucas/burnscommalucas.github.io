@@ -25,13 +25,11 @@ export class HomeComponent implements OnInit {
     this.elems.forEach((elem) => {
       this.strings.push(elem.innerHTML);
     }, this);
-    console.log(this.strings);
     this.nextTyping();
   }
 
   nextTyping(num = 0, killPrevious = false) {
     const numStr = '-' + num;
-    console.log(this.strings[num]);
     const opts = {
       strings: [this.strings[num]],
       typeSpeed: 90,
@@ -48,7 +46,10 @@ export class HomeComponent implements OnInit {
         }
       }
     };
-    const typed = new Typed('.typing' + numStr, opts);
+    let typed;
+    try {
+      typed = new Typed('.typing' + numStr, opts);
+    } catch (err) {}
     if (killPrevious) {
       this.typings.forEach(typing => typing.destroy());
     }

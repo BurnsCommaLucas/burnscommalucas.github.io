@@ -1,0 +1,3 @@
+[submodule "Resume"]
+	path = src/app/resume/repo
+	url = https://github.com/BurnsCommaLucas/Resume.git

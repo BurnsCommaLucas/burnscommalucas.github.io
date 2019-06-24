@@ -68,10 +68,9 @@ p > a {
 	text-decoration: none;
 }
 
-#contact-icons {
+footer {
 	display: block;
 	height: 60px;
-	width: 100vw;
 	text-align: center;
 	margin-top: auto;
 }

@@ -1,3 +1,4 @@
+<body>
 <nav class="navbar navbar-expand-md navbar-toggleable-md">
   <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
           aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,21 +10,49 @@
       <li class="nav-item"><a class="nav-link" routerLink='./home' (click)='isNavbarCollapsed = true'>Home</a></li>
       <li class="nav-item"><a class="nav-link" routerLink='./about' (click)='isNavbarCollapsed = true'>About</a></li>
       <li class="nav-item"><a class="nav-link" routerLink='./resume' (click)='isNavbarCollapsed = true'>Resume</a></li>
-      <li class="nav-item"><a class="nav-link" routerLink='./contact' (click)='isNavbarCollapsed = true'>Contact</a></li>
       <li class="nav-item"><a class="nav-link" (click)='hidePicker = !hidePicker'><fa-icon [icon]="palette"></fa-icon></a></li>
     </div>
   </div>
 </nav>
-<div [hidden]="hidePicker" class="row" id="color-picker">
-  <div class="col-xs-2" style="text-align: right;">
-    <p>Primary: </p>
-    <p style="margin-top: -6px;">Secondary: </p>
-  </div>
-  <div class="col-xs-2">
-    <input [cpAlphaChannel]="'disabled'" (colorPickerChange)="primaryChanged($event)" [(colorPicker)]="primary" [style.background]="primary"/>
+<div [hidden]="hidePicker" class="row unclickable" id="color-picker">
+  <div class="col-xs-1">
+    <label for="primary">Primary:</label>
     <br>
-    <input [cpAlphaChannel]="'disabled'" (colorPickerChange)="secondaryChanged($event)" [(colorPicker)]="secondary" [style.background]="secondary"/>
+    <div class="picker">
+      <input id="primary" name="primary" 
+      [cpPosition]="'bottom'" 
+      [cpOKButton]="true" 
+      [cpCancelButton]="true" 
+      [cpAlphaChannel]="'disabled'" 
+      (colorPickerChange)="primaryChanged($event)" 
+      [(colorPicker)]="primary" 
+      [style.background]="primary"/>
+    </div>
+  </div>
+  <div class="col-xs-1">
+    <label for="secondary">Secondary:</label>
+    <br>
+    <div class="picker">
+      <input id="secondary" name="secondary" 
+      [cpPosition]="'bottom'" 
+      [cpOKButton]="true" 
+      [cpCancelButton]="true" 
+      [cpAlphaChannel]="'disabled'" 
+      (colorPickerChange)="secondaryChanged($event)" 
+      [(colorPicker)]="secondary" 
+      [style.background]="secondary"/>
+    </div>
   </div>
 </div>
 
 <router-outlet></router-outlet>
+</body>
+<!--Content Container-->
+<footer class="footer" id="contact-icons">
+  <!-- Mail bots ruin everything, so no more mailto link :shrug:
+  Just go to one of the other links if you really want to get in touch-->
+  <a href="https://github.com/burnscommalucas" target="_blank"><fa-icon [icon]='github' size='2x'></fa-icon></a>
+  <a href="https://www.linkedin.com/in/burnscommalucas" target="_blank"><fa-icon [icon]='linkedin' size='2x'></fa-icon></a>
+  <a href="https://twitch.tv/c_odder" target="_blank"><fa-icon [icon]='twitch' size='2x'></fa-icon></a>
+</footer>
+<!--End Content-->

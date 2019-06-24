@@ -8,7 +8,6 @@ import { ColorPickerModule } from 'ngx-color-picker';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 
@@ -16,7 +15,6 @@ import { ResumeComponent } from './resume/resume.component';
   declarations: [
     AppComponent,
     AboutComponent,
-    ContactComponent,
     HomeComponent,
     ResumeComponent
   ],

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Directive, HostBinding } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import Typed from 'typed.js';
 
 @Component({

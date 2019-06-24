@@ -1,18 +1,27 @@
 :root {
 	--primary: #3866af;
 	--secondary: #ffebb5;
+	--accent: rgba(0, 0, 0, 0.2);
 }
 
 body {
 	font-family: menlo, monaco, "DejaVu Sans Mono", "Lucida Console", "Andale Mono", monospace, consolas;
 	background: var(--primary);
 	color: var(--secondary);
+	display: flex;
+	flex-direction: column;
+	min-height: 90vh;
 }
 
 #color-picker {
     padding: 20px;
     padding-left: 30px;
-    margin-bottom: -30px;
+	margin-bottom: -20px;
+	max-width: 100vw;
+}
+
+.picker {
+	box-shadow: 3px 3px 5px var(--accent);
 }
 
 .navbar, 
@@ -33,10 +42,6 @@ li.nav-item > a:hover > fa-icon {
 	background-color: var(--primary);
     color:var(--secondary);
     border-radius:5px;
-}
-
-.header {
-	font-size: 4.5em;
 }
 
 .fitted {
@@ -64,23 +69,26 @@ p > a {
 }
 
 #contact-icons {
-    padding-top: 15px;
+	display: block;
+	height: 60px;
+	width: 100vw;
+	text-align: center;
+	margin-top: auto;
 }
 
-#contact-icons > a > fa-icon, #contact-icons > a {
-    padding-right: 15px;
-	color: var(--secondary);
-	background: var(--primary);
+#contact-icons > a > fa-icon {
+	margin: 20px;
 }
 
 .invisible {
+	display: none;
 	opacity: 0;
 	height: 0px; 
 	padding: 0px;
 	margin: 0px;
 }
 
-/* Terminal Blink animation applied to span.blink */
+/* Terminal Blink animation applied to .blink */
 .blink {
 	animation: blink-animation 1.25s steps(2, start) infinite;
 	-webkit-animation: blink-animation 1.25s steps(2, start) infinite;

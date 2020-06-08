@@ -5,7 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { appRoutes } from './routes';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
@@ -21,6 +21,7 @@ import { ResumeComponent } from './resume/resume.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     NgbModule,
     FontAwesomeModule,
     ColorPickerModule,

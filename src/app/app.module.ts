@@ -11,11 +11,8 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
-import { httpInterceptorProviders } from './http-interceptors';
-import { EnsureHttpInterceptor } from './http-interceptors/ensure-https-interceptor';
 
 @NgModule({
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: EnsureHttpInterceptor, multi: true }],
   declarations: [
     AppComponent,
     AboutComponent,
@@ -29,6 +26,7 @@ import { EnsureHttpInterceptor } from './http-interceptors/ensure-https-intercep
     ColorPickerModule,
     RouterModule.forRoot(appRoutes)
   ],
+  providers: [],
   bootstrap: [AppComponent],
   exports: [AppComponent]
 })

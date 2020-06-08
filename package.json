@@ -7,6 +7,7 @@
   },
   "scripts": {
     "ng": "ng",
+    "heroku-prebuild": "node prebuild.js",
     "heroku-postbuild": "ng build --prod",
     "start": "node server.js",
     "local-start": "ng serve",

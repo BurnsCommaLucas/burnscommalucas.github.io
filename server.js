@@ -8,7 +8,9 @@ const app = express();
 app.use(express.static(__dirname + '/dist/personal-site'));
 // app.use(secure);
 app.use((req, res, next) => {
+    console.log("request", req);
     res.setHeader('X-Forwarded-Proto', 'https');
+    console.log("response", res);
     next();
 })
 

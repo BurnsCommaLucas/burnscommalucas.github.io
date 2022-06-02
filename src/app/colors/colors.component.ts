@@ -1,60 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { faLessThanEqual } from '@fortawesome/free-solid-svg-icons';
+import { ColorScheme } from './ColorScheme';
+import { DefaultColors } from './DefaultColors';
 
 @Component({
 	selector: 'app-colors',
 	templateUrl: './colors.component.html'
 })
 export class ColorsComponent implements OnInit {
-	ngOnInit(): void {
-		this.currentPrimary = localStorage.getItem('primary');
-		this.currentSecondary = localStorage.getItem('secondary');
-		this.glowEnabled = localStorage.getItem('glow') === 'true';
-	}
 	accentLight = '#ffffff88';
 	accentDark = '#00000088';
 	currentPrimary = '#3866af';
 	currentSecondary = '#ffebb5';
 	glowEnabled = false;
+	colorSchemes: ColorScheme[] = DefaultColors;
 
-	defaultSchemes: ColorScheme[] = [
-		{
-			name: 'Default',
-			primary: '#3866af',
-			secondary: '#ffebb5',
-			glow: false
-		},
-		{
-			name: 'Solarized Dark',
-			primary: '#073642',
-			secondary: '#93a1a1',
-			glow: false
-		},
-		{
-			name: 'Solarized Light',
-			primary: '#eee8d5',
-			secondary: '#586e75',
-			glow: false
-		},
-		{
-			name: 'Amber CRT',
-			primary: '#2a2c2a',
-			secondary: '#ff7300',
-			glow: true
-		},
-		{
-			name: 'Green CRT',
-			primary: '#2a2c2a',
-			secondary: '#03ff05',
-			glow: true
-		},
-		{
-			name: 'Hot Dog Stand',
-			primary: '#fdfc00',
-			secondary: '#ff0000',
-			glow: false
-		}
-	];
+	constructor() { }
+
+	ngOnInit() {
+		this.currentPrimary = localStorage.getItem('primary');
+		this.currentSecondary = localStorage.getItem('secondary');
+		this.glowEnabled = localStorage.getItem('glow') === 'true';
+	}
 
 	pickerPrimary(val: string) {
 		document.documentElement.style.setProperty('--accent', this.needsLightAccent(val) ? this.accentLight : this.accentDark);
@@ -107,11 +73,4 @@ export class ColorsComponent implements OnInit {
 		this.glowEnabled = val;
 		this.glowChanged();
 	}
-}
-
-class ColorScheme {
-	name: string;
-	primary: string;
-	secondary: string;
-	glow: boolean;
 }

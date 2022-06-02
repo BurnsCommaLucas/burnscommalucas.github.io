@@ -15,24 +15,23 @@ import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AboutComponent,
-    ColorsComponent,
-    HomeComponent,
-    ResumeComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    NgbModule,
-    FontAwesomeModule,
-    FormsModule,
-    ColorPickerModule,
-    RouterModule.forRoot(appRoutes)
-  ],
-  providers: [],
-  bootstrap: [AppComponent],
-  exports: [AppComponent]
+	declarations: [
+		AppComponent,
+		AboutComponent,
+		ColorsComponent,
+		HomeComponent,
+		ResumeComponent
+	],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		NgbModule,
+		FontAwesomeModule,
+		FormsModule,
+		ColorPickerModule,
+		RouterModule.forRoot(appRoutes)
+	],
+	bootstrap: [AppComponent],
+	exports: [AppComponent]
 })
 export class AppModule { }

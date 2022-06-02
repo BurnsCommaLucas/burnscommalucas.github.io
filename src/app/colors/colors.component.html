@@ -6,7 +6,7 @@
         </p>
         <div id="color-list">
             <ul>
-                <li *ngFor="let scheme of defaultSchemes">
+                <li *ngFor="let scheme of colorSchemes">
                     <a class="color-scheme"
                         (click)="primaryChanged(scheme.primary); secondaryChanged(scheme.secondary); setGlow(scheme.glow)">{{scheme.name}}</a>
                 </li>

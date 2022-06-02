@@ -32,7 +32,7 @@ export class HomeComponent implements OnInit {
     const numStr = '-' + num;
     const opts = {
       strings: [this.strings[num]],
-      typeSpeed: 90,
+      typeSpeed: 45,
       showCursor: true,
       cursorChar: '█',
       autoInsertCss: false,
@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
           setTimeout(() => {
             this.stopBlink();
             this.nextTyping(num + 1);
-          }, 3000);
+          }, 1500);
         }
       }
     };

@@ -1,0 +1,49 @@
+<div class="fitted">
+    <div>
+        <p>
+            Ah, flair, the thing that will (hopefully) make my site memorable.
+            Below are a few color schemes I'm either fond of or I think will make your time here a little more fun.
+        </p>
+        <div id="color-list">
+            <ul>
+                <li *ngFor="let scheme of defaultSchemes">
+                    <a class="color-scheme"
+                        (click)="primaryChanged(scheme.primary); secondaryChanged(scheme.secondary); setGlow(scheme.glow)">{{scheme.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <p>
+            Or if those don't appeal to you, feel free to make your own theme!
+        </p>
+        <div class="container">
+            <div class="row unclickable" id="color-picker">
+                <div class="col-sm-3 color-picker-item">
+                    <label for="primary">Primary:</label>
+                    <br>
+                    <div class="picker">
+                        <input id="primary" name="primary" [cpPosition]="'bottom'" [cpOKButton]="true"
+                            [cpCancelButton]="true" [cpAlphaChannel]="'disabled'"
+                            (colorPickerChange)="pickerPrimary($event)" [(colorPicker)]="currentPrimary" />
+                    </div>
+                </div>
+                <div class="col-sm-3 color-picker-item">
+                    <label for="secondary">Secondary:</label>
+                    <br>
+                    <div class="picker">
+                        <input id="secondary" name="secondary" [cpPosition]="'bottom'" [cpOKButton]="true"
+                            [cpCancelButton]="true" [cpAlphaChannel]="'disabled'"
+                            (colorPickerChange)="pickerSecondary($event)" [(colorPicker)]="currentSecondary" />
+                    </div>
+                </div>
+                <div class="col-sm-3 color-picker-item">
+                    <label for="glow">Glow:</label>
+                    <br>
+                    <input type="checkbox" id="glow" name="glow" [ngModel]="glowEnabled"
+                        (click)="setGlow(!glowEnabled)">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

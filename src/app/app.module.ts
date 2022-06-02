@@ -6,9 +6,11 @@ import { appRoutes } from './routes';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
+import { ColorsComponent } from './colors/colors.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 
@@ -16,6 +18,7 @@ import { ResumeComponent } from './resume/resume.component';
   declarations: [
     AppComponent,
     AboutComponent,
+    ColorsComponent,
     HomeComponent,
     ResumeComponent
   ],
@@ -24,6 +27,7 @@ import { ResumeComponent } from './resume/resume.component';
     HttpClientModule,
     NgbModule,
     FontAwesomeModule,
+    FormsModule,
     ColorPickerModule,
     RouterModule.forRoot(appRoutes)
   ],

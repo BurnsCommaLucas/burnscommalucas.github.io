@@ -1,2 +1,3 @@
 User-agent: *
 Disallow: /assets/bonus
+Sitemap: https://lucas.burns.io/sitemap.xml

@@ -16,7 +16,7 @@ export const DefaultColors: ColorScheme[] = [
     {
         name: "Solarized Light",
         primary: "#eee8d5",
-        secondary: "#586e75",
+        secondary: "#3b4d53",
         glow: false
     },
     {

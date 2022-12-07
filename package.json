@@ -1,10 +1,6 @@
 {
 	"name": "personal-site",
 	"version": "1.0.0",
-	"engines": {
-		"node": "12.16.1",
-		"npm": "6.14.4"
-	},
 	"scripts": {
 		"ng": "ng",
 		"heroku-prebuild": "node prebuild.js",
@@ -41,6 +37,7 @@
 		"tslib": "^1.14.0",
 		"typed.js": "^2.0.10",
 		"typescript": "~3.4.0",
+		"yarn": "^1.22.19",
 		"zone.js": "~0.9.1"
 	},
 	"devDependencies": {

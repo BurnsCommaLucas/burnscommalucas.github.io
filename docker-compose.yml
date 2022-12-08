@@ -1,0 +1,13 @@
+version: '3.7'
+services:
+  nginx-homepage:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - "deployment_environment=${DEPLOY_ENV}"
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+    ports:
+      - '443:443'
+      - '80:80'

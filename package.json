@@ -4,7 +4,7 @@
 	"scripts": {
 		"ng": "ng",
 		"heroku-prebuild": "node prebuild.js",
-		"heroku-postbuild": "ng build --prod",
+		"heroku-postbuild": "ng build --prod --output-path=./dist/out",
 		"start": "node server.js",
 		"local-start": "ng serve",
 		"build": "ng build",

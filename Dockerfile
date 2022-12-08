@@ -1,15 +1,23 @@
-# Define node version
-FROM node:14.20.0-alpine AS build
-# Define container directory
-WORKDIR /usr/src/app
-# Copy all source over for build
-COPY . .
-# Run build
-RUN yarn run heroku-prebuild
-RUN yarn install
-RUN yarn global add @angular/cli
-RUN ng build --prod
+FROM node:14.21.1 as build-stage 
 
-FROM nginx:1.23.2-alpine
-# Copy built angular files to NGINX HTML folder
-COPY --from=build /usr/src/app/dist/personal-site/ /usr/share/nginx/html
+WORKDIR /app 
+
+COPY . .
+RUN yarn install 
+COPY ./ /app/ 
+
+RUN yarn run heroku-postbuild
+
+FROM nginx:1.23.2
+
+COPY ./nginx/nginx-CA-served.conf . 
+COPY ./nginx/nginx-no-ssl.conf . 
+
+ARG deployment_environment 
+RUN if [ -z $deployment_environment ]; then \ 
+        cp  ./nginx-no-ssl.conf /etc/nginx/conf.d/default.conf; \ 
+    else \ 
+        cp  ./nginx-CA-served.conf /etc/nginx/conf.d/default.conf; \ 
+    fi 
+
+COPY --from=build-stage /app/dist/out/ /usr/share/nginx/html 

@@ -1,13 +1,13 @@
 version: '3.7'
 services:
-  nginx-homepage:
+  homepage:
+    container_name: homepage
+    restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        - "deployment_environment=${DEPLOY_ENV}"
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-    ports:
-      - '443:443'
-      - '80:80'
+    networks:
+      - default
+networks:
+  default:
+    name: docker_default

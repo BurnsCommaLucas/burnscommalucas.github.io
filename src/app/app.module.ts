@@ -29,7 +29,7 @@ import { ResumeComponent } from './resume/resume.component';
 		FontAwesomeModule,
 		FormsModule,
 		ColorPickerModule,
-		RouterModule.forRoot(appRoutes, { relativeLinkResolution: 'legacy' })
+		RouterModule.forRoot(appRoutes, {})
 	],
 	bootstrap: [AppComponent],
 	exports: [AppComponent]

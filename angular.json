@@ -21,8 +21,16 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/assets",
-              {"glob": "robots.txt", "input": "src/assets", "output": "/"},
-              {"glob": "sitemap.xml", "input": "src/assets", "output": "/"}
+              {
+                "glob": "robots.txt",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": "sitemap.xml",
+                "input": "src/assets",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.css"

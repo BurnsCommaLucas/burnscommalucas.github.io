@@ -22,7 +22,7 @@
 		"@angular/platform-browser": "^9.1.13",
 		"@angular/platform-browser-dynamic": "^9.1.13",
 		"@angular/router": "^9.1.13",
-		"@fortawesome/angular-fontawesome": "^0.4.0",
+		"@fortawesome/angular-fontawesome": "^0.7.0",
 		"@fortawesome/fontawesome-svg-core": "^1.2.35",
 		"@fortawesome/free-brands-svg-icons": "^5.15.1",
 		"@fortawesome/free-solid-svg-icons": "^5.15.1",
@@ -35,7 +35,6 @@
 		"rxjs": "~6.5.2",
 		"ssl-express-www": "^3.0.7",
 		"tslib": "^1.10.0",
-		"typed.js": "^2.0.10",
 		"typescript": "~3.8.3",
 		"yarn": "^1.22.19",
 		"zone.js": "~0.10.2"

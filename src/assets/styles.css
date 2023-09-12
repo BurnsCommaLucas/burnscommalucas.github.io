@@ -39,11 +39,11 @@ body {
 	margin-right: 10px;
 }
 
-.picker > #primary {
+.picker>#primary {
 	background-color: var(--primary);
 }
 
-.picker > #secondary {
+.picker>#secondary {
 	background-color: var(--secondary);
 }
 
@@ -140,6 +140,35 @@ footer {
 	-webkit-animation: blink-animation 1.25s steps(2, start) infinite;
 	-moz-animation: blink-animation 1.25s steps(2, start) infinite;
 	-o-animation: blink-animation 1.25s steps(2, start) infinite;
+}
+
+
+markdown {
+	max-width: inherit;
+
+	th,
+	td {
+		border: solid 1px;
+	}
+
+	table {
+		margin-bottom: 2%;
+	}
+
+	h1:hover>a,
+	h2:hover>a,
+	h3:hover>a,
+	h4:hover>a,
+	h5:hover>a,
+	h6:hover>a {
+		border-bottom: 1.5px dotted var(--secondary);
+	}
+
+	.postImage>img {
+		max-width: 100%;
+		max-height: 100%;
+		margin-bottom: 1%;
+	}
 }
 
 @keyframes blink-animation {

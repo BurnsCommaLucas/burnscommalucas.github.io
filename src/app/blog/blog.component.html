@@ -1,0 +1,9 @@
+<div class="fitted" id="blog-viewport">
+    <markdown 
+    katex
+    *ngFor="let postPath of postFileNames"
+    [src]="postPath"
+    [disableSanitizer]="true">
+    </markdown>
+    <hr />
+</div>

@@ -88,28 +88,6 @@
           "options": {
             "browserTarget": "personal-site:build"
           }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/favicon-32x32.png",
-              "src/favicon-16x16.png",
-              "src/apple-touch-icon.png",
-              "src/android-chrome-192x192.png",
-              "src/android-chrome-512x512.png",
-              "src/assets"
-            ]
-          }
         }
       }
     },

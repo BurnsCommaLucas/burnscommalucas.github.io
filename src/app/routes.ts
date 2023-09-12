@@ -3,6 +3,7 @@ import { AboutComponent } from './about/about.component';
 import { ColorsComponent } from './colors/colors.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
+import { BlogComponent } from './blog/blog.component';
 
 export const appRoutes: Routes = [
 	{
@@ -24,6 +25,11 @@ export const appRoutes: Routes = [
 		path: 'resume',
 		component: ResumeComponent,
 		data: { title: 'Resume'}
+	},
+	{
+		path: 'posts',
+		component: BlogComponent,
+		data: { title: 'Posts'}
 	},
 	{
 		path: 'colors',

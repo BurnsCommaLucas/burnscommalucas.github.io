@@ -142,6 +142,9 @@ footer {
 	-o-animation: blink-animation 1.25s steps(2, start) infinite;
 }
 
+hr {
+	border-top: 1.5px dotted var(--secondary);
+}
 
 markdown {
 	max-width: inherit;
@@ -155,13 +158,27 @@ markdown {
 		margin-bottom: 2%;
 	}
 
-	h1:hover>a,
-	h2:hover>a,
-	h3:hover>a,
-	h4:hover>a,
-	h5:hover>a,
-	h6:hover>a {
-		border-bottom: 1.5px dotted var(--secondary);
+	h1:hover,
+	h2:hover,
+	h3:hover,
+	h4:hover,
+	h5:hover,
+	h6:hover {
+		a {
+			border-bottom: 2px dotted var(--secondary);
+			line-height: 125%;
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		a {
+			line-height: 125%;
+		}
 	}
 
 	.postImage>img {

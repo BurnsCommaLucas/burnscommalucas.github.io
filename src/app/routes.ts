@@ -4,36 +4,47 @@ import { ColorsComponent } from './colors/colors.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { BlogComponent } from './blog/blog.component';
+import { PostComponent } from './post/post.component';
 
 export const appRoutes: Routes = [
 	{
 		path: '',
 		component: HomeComponent,
-		data: { title: 'Home'}
+		data: { title: 'Lucas Burns - Home' }
 	},
 	{
 		path: 'about',
 		component: AboutComponent,
-		data: { title: 'About'}
+		data: { title: 'Lucas Burns - About' }
 	},
 	{
 		path: 'home',
-		component: HomeComponent,
-		data: { title: 'Home'}
+		redirectTo: ''
 	},
 	{
 		path: 'resume',
 		component: ResumeComponent,
-		data: { title: 'Resume'}
+		data: { title: 'Lucas Burns - Resume' }
+	},
+	{
+		path: 'posts/:postTitle',
+		pathMatch: 'full',
+		component: PostComponent,
+		data: { title: 'Lucas Burns - ' }
 	},
 	{
 		path: 'posts',
+		pathMatch: 'full',
 		component: BlogComponent,
-		data: { title: 'Posts'}
+		data: { title: 'Lucas Burns - Posts' }
 	},
 	{
 		path: 'colors',
 		component: ColorsComponent,
-		data: { title: 'Colors!'}
-	}
+		data: { title: 'Lucas Burns - Colors!' }
+	},
+	{
+		path: '**',
+		redirectTo: ''
+	},
 ];

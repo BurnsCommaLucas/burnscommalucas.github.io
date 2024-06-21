@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { faBars, faPalette } from '@fortawesome/free-solid-svg-icons';
-import { faGithubSquare, faTwitch, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faBars, faBook, faPalette } from '@fortawesome/free-solid-svg-icons';
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
 	selector: 'app-root',
@@ -10,15 +9,14 @@ import { faGithubSquare, faTwitch, faLinkedin } from '@fortawesome/free-brands-s
 })
 export class AppComponent implements OnInit {
 	isNavbarCollapsed = true;
-	hidePicker = true;
 	title = 'personal-site';
 	bars = faBars;
 	linkedin = faLinkedin;
 	github = faGithubSquare;
-	twitch = faTwitch;
+	book = faBook;
 	palette = faPalette;
 
-	constructor(private router: Router) { }
+	constructor() { }
 
 	ngOnInit(): void {
 		localStorage.setItem('primary', '#3866af');

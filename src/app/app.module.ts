@@ -16,6 +16,7 @@ import { ColorsComponent } from './colors/colors.component';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { BlogComponent } from './blog/blog.component';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
 	declarations: [
@@ -24,7 +25,8 @@ import { BlogComponent } from './blog/blog.component';
 		ColorsComponent,
 		HomeComponent,
 		ResumeComponent,
-		BlogComponent
+		BlogComponent,
+		PostComponent
 	],
 	imports: [
 		BrowserModule,
@@ -44,23 +46,26 @@ import { BlogComponent } from './blog/blog.component';
 	bootstrap: [AppComponent],
 	exports: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
 
 export function markedOptionsFactory(): MarkedOptions {
 	const renderer = new MarkedRenderer();
 
-	renderer.heading = (text: string, level: 1 | 2 | 3 | 4 | 5 | 6, raw: string) => {
-		const id = encodeURIComponent(text);
-		return `<h${level}><a href='posts#${id}' id='${id}'>${text}</a></h${level}>`;
-	};
-
 	renderer.image = (href: string | null, title: string | null, text: string) => {
-		return `<div class='postImage'><img src=${POST_LOCATION_PREFIX}/${href} alt="${text ? text : ''}"></img></div>`;
+		if (href == null) return null
+
+		let interpretedUrl = href;
+
+		if (!href.startsWith("http://") && !href.startsWith("https://")) {
+			interpretedUrl = `${POST_LOCATION_PREFIX}/images/${interpretedUrl}`;
+		}
+
+		return `<div class='postImage'><img src=${interpretedUrl} alt="${text ? text : 'No alt text provided'}"></img></div>`;
 	};
 
 	return {
 		// https://github.com/jfcere/ngx-markdown/blob/master/lib/src/marked-options.ts
-		// gfm: true,
-		renderer: renderer
+		renderer: renderer,
+		gfm: true
 	};
 }

@@ -1,42 +1,26 @@
-import { HttpClient } from '@angular/common/http';
-import { AfterContentInit, Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { POST_LOCATION_PREFIX } from '../app-constants';
+import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { PostDefiniton, PostList } from '../PostIndex';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css'],
 })
-export class BlogComponent implements AfterContentInit {
-  private httpClient: HttpClient;
-  private router: Router;
+export class BlogComponent {
+  allPosts: PostDefiniton[];
+  currentPost = undefined;
 
-  postFileNames: string[];
+  constructor(activatedRoute: ActivatedRoute, titleService: Title) {
+    activatedRoute.data.subscribe((data) => {
+      titleService.setTitle(data['title']);
+    });
 
-  constructor(http: HttpClient, router: Router) {
-    this.httpClient = http;
-    this.router = router;
-    
-    this.httpClient
-      .get(`${POST_LOCATION_PREFIX}/postIndex.json`, { responseType: 'json' })
-      .subscribe(data => {
-        this.postFileNames = data['postFiles'].map((filePath: string) => `${POST_LOCATION_PREFIX}/${filePath}`);
-      });
+    this.allPosts = PostList;
   }
 
-  ngAfterContentInit(): void {
-    let element = null;
-    const fragment = this.safeEncodeParam(this.router.lastSuccessfulNavigation.extractedUrl.fragment);
-    // Compensate for lag from loading things like images, or a preposterous number of posts
-    setTimeout(() => {
-      element = document.getElementById(fragment);
-      if (element) element.scrollIntoView({ behavior: 'smooth' });
-    }, 250);
-  }
-
-  safeEncodeParam(param: string): string {
-    if (decodeURIComponent(param) == param) return encodeURIComponent(param);
-    else return param
+  hasPosts() {
+    return this.allPosts.length != 0
   }
 }

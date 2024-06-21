@@ -1,4 +1,11 @@
-hr {
-    background-color: var(--secondary);
-    color: var(--secondary);
+li:hover>a {
+    border-bottom: 1.5px dotted var(--secondary);
+}
+
+ul {
+    list-style: '> ';
+}
+
+li {
+    padding-bottom: 5px;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,12 +8,10 @@ import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './repo/resume.html',
   styleUrls: ['./repo/style.css']
 })
-export class ResumeComponent implements OnInit {
+export class ResumeComponent {
   pdf = faFilePdf;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(activatedRoute: ActivatedRoute, titleService: Title) {
+    activatedRoute.data.subscribe((data) => titleService.setTitle(data['title']));
   }
-
 }

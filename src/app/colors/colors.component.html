@@ -8,7 +8,7 @@
             <ul>
                 <li *ngFor="let scheme of colorSchemes">
                     <a class="color-scheme"
-                        (click)="primaryChanged(scheme.primary); secondaryChanged(scheme.secondary); setGlow(scheme.glow)">{{scheme.name}}</a>
+                        (click)="schemeChanged(scheme)">{{scheme.name}}</a>
                 </li>
             </ul>
         </div>
@@ -25,7 +25,7 @@
                     <div class="picker">
                         <input id="primary" name="primary" [cpPosition]="'bottom'" [cpOKButton]="true"
                             [cpCancelButton]="true" [cpAlphaChannel]="'disabled'"
-                            (colorPickerChange)="pickerPrimary($event)" [(colorPicker)]="currentPrimary" />
+                            (colorPickerChange)="primaryChanged($event)" [(colorPicker)]="currentPrimary" />
                     </div>
                 </div>
                 <div class="col-sm-3 color-picker-item">
@@ -34,7 +34,7 @@
                     <div class="picker">
                         <input id="secondary" name="secondary" [cpPosition]="'bottom'" [cpOKButton]="true"
                             [cpCancelButton]="true" [cpAlphaChannel]="'disabled'"
-                            (colorPickerChange)="pickerSecondary($event)" [(colorPicker)]="currentSecondary" />
+                            (colorPickerChange)="secondaryChanged($event)" [(colorPicker)]="currentSecondary" />
                     </div>
                 </div>
                 <div class="col-sm-3 color-picker-item">

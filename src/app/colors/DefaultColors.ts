@@ -1,3 +1,4 @@
+import { faL } from "@fortawesome/free-solid-svg-icons";
 import { ColorScheme } from "./ColorScheme";
 
 export const DefaultColors: ColorScheme[] = [
@@ -42,5 +43,17 @@ export const DefaultColors: ColorScheme[] = [
         primary: "#1e023b",
         secondary: "#ff00de",
         glow: true
-    }
+    },
+    {
+        name: "Please let my eyes have a break",
+        primary: "#ffffff",
+        secondary: "#000000",
+        glow: false
+    },
+    {
+        name: "Please let my eyes have a break (but in dark mode)",
+        primary: "#000000",
+        secondary: "#ffffff",
+        glow: false
+    },
 ];

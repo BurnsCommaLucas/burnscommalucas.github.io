@@ -5,7 +5,7 @@
 			aria-label="Toggle navigation">
 			<fa-icon [icon]="bars"></fa-icon>
 		</button>
-		<a class="navbar-brand unclickable" routerLink="./home">lucas.burns.io</a>
+		<a class="navbar-brand" routerLink="./home">lucas.burns.io</a>
 		<div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="exCollapsingNavbar2">
 			<div class="navbar-nav mr-auto">
 				<li class="nav-item"><a class="nav-link" routerLink="./home" (click)="isNavbarCollapsed = true">Home</a>
@@ -14,6 +14,9 @@
 						(click)="isNavbarCollapsed = true">About</a></li>
 				<li class="nav-item"><a class="nav-link" routerLink="./resume"
 						(click)="isNavbarCollapsed = true">Resume</a>
+				</li>
+				<li class="nav-item"><a class="nav-link" routerLink="./posts"
+						(click)="isNavbarCollapsed = true">Posts</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" routerLink="./colors" (click)="isNavbarCollapsed = true">
 						<fa-icon [icon]="palette"></fa-icon>
@@ -33,8 +36,13 @@
 	<a href="https://www.linkedin.com/in/burnscommalucas" target="_blank" name="LinkedIn">
 		<fa-icon [icon]="linkedin" size="2x"></fa-icon>
 	</a>
-	<a href="https://twitch.tv/c_odder" target="_blank" name="Twitch">
-		<fa-icon [icon]="twitch" size="2x"></fa-icon>
+	<a href="https://app.thestorygraph.com/profile/burnscommalucas" target="_blank" name="StoryGraph">
+		<!-- The icons that actually look like the storygrpah -->
+		<fa-icon [icon]="book" size="2x"></fa-icon>
 	</a>
+	<!-- Maybe some day again, old friend 🫡 -->
+	<!-- <a href="https://twitch.tv/c_odder" target="_blank" name="Twitch">
+		<fa-icon [icon]="twitch" size="2x"></fa-icon>
+	</a> -->
 </footer>
 <!--End Content-->

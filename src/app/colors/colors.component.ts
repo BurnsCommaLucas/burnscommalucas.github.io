@@ -49,6 +49,7 @@ export class ColorsComponent implements OnInit {
 		this.router.navigate([], {
 			relativeTo: this.activatedRoute,
 			queryParams: queryParamMap,
+			queryParamsHandling: "merge",
 		});
 	}
 

@@ -28,7 +28,9 @@ export class PostComponent implements OnInit, AfterContentInit {
       const id = encodeURIComponent(text);
       const isBold = level % 2 == 0;
       // Encode every heading with a link to itself within the post
-      const linkBody = `<a href="posts/${this.post.urlEncodedTitle()}#${id}" id="${id}">${text}</a>`;
+      // TODO something about the production build of this totally busts it for some reason, gotta figure that one out
+      // const linkBody = `<a href="posts/${this.post.urlEncodedTitle()}#${id}" id="${id}">${text}</a>`;
+      const linkBody = text;
       return `<h${level}>${isBold ? "<b>" : ""}${linkBody}${isBold ? "</b>" : ""}</h${level}>`;
     };
   }

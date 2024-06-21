@@ -20,10 +20,10 @@ app.use(
         secure(req, res, next);
     }
 );
-app.use(express.static(__dirname + '/dist/personal-site'));
+app.use(express.static(__dirname + '/dist/out'));
 
 app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname + '/dist/personal-site/index.html'));
+    res.sendFile(path.join(__dirname + '/dist/out/index.html'));
 });
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log('Listening on port %s', port));

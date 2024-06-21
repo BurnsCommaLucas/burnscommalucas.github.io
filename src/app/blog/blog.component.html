@@ -1,10 +1,11 @@
-<div class="fitted">
-    <div>
-        <h3>Post Directory</h3>
-        <ul *ngIf="hasPosts(); else elseBlock">
-            <li *ngFor="let post of allPosts"><a [routerLink]="['/posts', post.urlEncodedTitle()]">{{post.date}}: {{post.title}}</a>
-            </li>
-        </ul>
-        <ng-template #elseBlock><p>No posts yet, check back later</p></ng-template>
-    </div>
+<div>
+    <h3>Post Directory</h3>
+    <ul *ngIf="hasPosts(); else elseBlock">
+        <li *ngFor="let post of allPosts"><a [routerLink]="['/posts', post.safeTitle()]">{{post.date}}:
+                {{post.title}}</a>
+        </li>
+    </ul>
+    <ng-template #elseBlock>
+        <p>No posts yet, check back later</p>
+    </ng-template>
 </div>

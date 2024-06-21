@@ -8,28 +8,29 @@
 		<a class="navbar-brand" routerLink="./home">lucas.burns.io</a>
 		<div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="exCollapsingNavbar2">
 			<div class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" routerLink="./home" (click)="isNavbarCollapsed = true">Home</a>
+				<li class="nav-item"><a class="nav-link" routerLink="/home" (click)="isNavbarCollapsed = true">Home</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" routerLink="./about"
+				<li class="nav-item"><a class="nav-link" routerLink="/about"
 						(click)="isNavbarCollapsed = true">About</a></li>
-				<li class="nav-item"><a class="nav-link" routerLink="./resume"
+				<li class="nav-item"><a class="nav-link" routerLink="/resume"
 						(click)="isNavbarCollapsed = true">Resume</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" routerLink="./posts"
+				<li class="nav-item"><a class="nav-link" routerLink="/posts"
 						(click)="isNavbarCollapsed = true">Posts</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" routerLink="./colors" (click)="isNavbarCollapsed = true">
+				<li class="nav-item"><a class="nav-link" routerLink="/colors" (click)="isNavbarCollapsed = true">
 						<fa-icon [icon]="palette"></fa-icon>
 					</a></li>
 			</div>
 		</div>
 	</nav>
-	<router-outlet></router-outlet>
+	<div class="container" style="padding-top: 1em;">
+		<router-outlet></router-outlet>
+	</div>
 </body>
 <!--Content Container-->
 <footer class="footer" id="contact-icons">
-	<!-- Mail bots ruin everything, so no more mailto link :shrug:
-  Just go to one of the other links if you really want to get in touch-->
+	<!-- Mail bots ruin everything, so no more mailto link :shrug: Just go to one of the other links if you really want to get in touch-->
 	<a href="https://github.com/burnscommalucas" target="_blank" name="GitHub">
 		<fa-icon [icon]="github" size="2x"></fa-icon>
 	</a>

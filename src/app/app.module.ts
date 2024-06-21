@@ -7,7 +7,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { MarkdownModule, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
+import { MarkdownModule, MARKED_OPTIONS, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
 import { POST_LOCATION_PREFIX } from './app-constants';
 
 import { AppComponent } from './app.component';
@@ -17,6 +17,8 @@ import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
 import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
+import markedFootnote from 'marked-footnote';
+import { stripUnsafeCharacters } from './helpers';
 
 @NgModule({
 	declarations: [
@@ -37,11 +39,18 @@ import { PostComponent } from './post/post.component';
 		ColorPickerModule,
 		MarkdownModule.forRoot({
 			markedOptions: {
-				provide: MarkedOptions,
+				provide: MARKED_OPTIONS,
 				useFactory: markedOptionsFactory
-			}
+			},
+			markedExtensions: [
+				markedFootnote()
+			]
 		}),
-		RouterModule.forRoot(appRoutes, {})
+		RouterModule.forRoot(appRoutes, {
+			anchorScrolling: 'enabled',
+			onSameUrlNavigation: 'reload',
+			scrollPositionRestoration: 'enabled'
+		})
 	],
 	bootstrap: [AppComponent],
 	exports: [AppComponent]
@@ -50,6 +59,21 @@ export class AppModule { }
 
 export function markedOptionsFactory(): MarkedOptions {
 	const renderer = new MarkedRenderer();
+
+	const wrapIfBold = (level: number, content: string) => {
+		return level % 2 == 0 ? `<b>${content}</b>` : content;
+	}
+
+	renderer.heading = (text: string, level: number) => {
+		const id = stripUnsafeCharacters(text);
+		// Encode every heading with a link to itself within the post
+		const linkBody = `<a href="#${id}" id="${id}">${text}</a>`;
+		return `<h${level}>${wrapIfBold(level, linkBody)}</h${level}>`;
+	};
+
+	renderer.link = (href: string | null, title: string | null, text: string) => {
+		return `<a href="${href}" target="_blank">${text}</a>`;
+	};
 
 	renderer.image = (href: string | null, title: string | null, text: string) => {
 		if (href == null) return null

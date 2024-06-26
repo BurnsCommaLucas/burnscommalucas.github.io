@@ -15,13 +15,6 @@ body {
 	text-shadow: 0 0 10px var(--glow);
 }
 
-.art-text {
-	line-height: 100%;
-	overflow: hidden;
-	color: var(--primary);
-	background-color: var(--secondary);
-}
-
 #color-picker {
 	padding: 20px;
 	padding-top: 0px;

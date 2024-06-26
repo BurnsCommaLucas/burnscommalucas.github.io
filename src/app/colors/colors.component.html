@@ -6,7 +6,7 @@
     <div id="color-list">
         <ul>
             <li *ngFor="let scheme of colorSchemes">
-                <a class="color-scheme" (click)="schemeChanged(scheme)">{{scheme.name}}</a>
+                <a class="color-scheme" (click)="colorsService.schemeChanged(scheme)">{{scheme.name}}</a>
             </li>
         </ul>
     </div>
@@ -23,7 +23,7 @@
                 <div class="picker">
                     <input id="primary" name="primary" [cpPosition]="'bottom'" [cpOKButton]="true"
                         [cpCancelButton]="true" [cpAlphaChannel]="'disabled'"
-                        (colorPickerChange)="primaryChanged($event)" [(colorPicker)]="currentPrimary" />
+                        (colorPickerChange)="colorsService.primaryChanged($event)" [(colorPicker)]="colorsService.currentPrimary" />
                 </div>
             </div>
             <div class="col-sm-3 color-picker-item">
@@ -32,13 +32,13 @@
                 <div class="picker">
                     <input id="secondary" name="secondary" [cpPosition]="'bottom'" [cpOKButton]="true"
                         [cpCancelButton]="true" [cpAlphaChannel]="'disabled'"
-                        (colorPickerChange)="secondaryChanged($event)" [(colorPicker)]="currentSecondary" />
+                        (colorPickerChange)="colorsService.secondaryChanged($event)" [(colorPicker)]="colorsService.currentSecondary" />
                 </div>
             </div>
             <div class="col-sm-3 color-picker-item">
                 <label for="glow">Glow:</label>
                 <br>
-                <input type="checkbox" id="glow" name="glow" [ngModel]="glowEnabled" (click)="setGlow(!glowEnabled)">
+                <input type="checkbox" id="glow" name="glow" [ngModel]="colorsService.glowEnabled" (click)="colorsService.setGlow(!colorsService.glowEnabled)">
             </div>
         </div>
     </div>

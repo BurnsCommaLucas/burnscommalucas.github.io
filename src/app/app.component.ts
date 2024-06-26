@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faBars, faBook, faPalette } from '@fortawesome/free-solid-svg-icons';
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { ColorsService } from './colors/colors.service';
+import { DefaultColorsMap } from './colors/DefaultColors';
 
 @Component({
 	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css']
+	templateUrl: './app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 	isNavbarCollapsed = true;
 	title = 'personal-site';
 	bars = faBars;
@@ -15,12 +16,9 @@ export class AppComponent implements OnInit {
 	github = faGithubSquare;
 	book = faBook;
 	palette = faPalette;
+	defaultScheme = DefaultColorsMap.get("Default");
 
-	constructor() { }
-
-	ngOnInit(): void {
-		localStorage.setItem('primary', '#3866af');
-		localStorage.setItem('secondary', '#ffebb5');
-		localStorage.setItem('glow', 'false');
+	constructor(colorsService: ColorsService) { 
+		colorsService.schemeChanged(this.defaultScheme);
 	}
 }

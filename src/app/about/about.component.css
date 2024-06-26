@@ -1,0 +1,19 @@
+.art-text {
+    width: 80ch;
+    font-size: 0.5em;
+	line-height: 100%;
+	overflow: hidden;
+	color: var(--dark);
+	background-color: var(--bright);
+    margin: 0 3ch 2ch 0;
+    text-shadow: none !important;
+}
+
+@media (max-width: 575px) {
+    .art-text {
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        position: relative;
+    }
+}

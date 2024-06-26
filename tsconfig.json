@@ -13,9 +13,11 @@
     "typeRoots": [
       "node_modules/@types"
     ],
+    "downlevelIteration": true,
     "lib": [
-      "es2018",
-      "dom"
+      "es2019",
+      "dom",
+      "dom.iterable",
     ],
     "useDefineForClassFields": false
   }

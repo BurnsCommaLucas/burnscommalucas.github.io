@@ -19,6 +19,8 @@ import { BlogComponent } from './blog/blog.component';
 import { PostComponent } from './post/post.component';
 import markedFootnote from 'marked-footnote';
 import { stripUnsafeCharacters } from './helpers';
+import { LocationStrategy } from '@angular/common';
+import { PathPreserveQueryLocationStrategy } from './preserve-query-params';
 
 @NgModule({
 	declarations: [
@@ -53,7 +55,10 @@ import { stripUnsafeCharacters } from './helpers';
 		})
 	],
 	bootstrap: [AppComponent],
-	exports: [AppComponent]
+	exports: [AppComponent],
+	providers: [
+		{ provide: LocationStrategy, useClass: PathPreserveQueryLocationStrategy }
+	]
 })
 export class AppModule { }
 

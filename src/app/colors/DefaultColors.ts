@@ -1,59 +1,61 @@
-import { faL } from "@fortawesome/free-solid-svg-icons";
+import { stripUnsafeCharacters } from "../helpers";
 import { ColorScheme } from "./ColorScheme";
 
-export const DefaultColors: ColorScheme[] = [
-    {
-        name: "Default",
-        primary: "#3866af",
-        secondary: "#ffebb5",
-        glow: false
-    },
-    {
-        name: "Solarized Dark",
-        primary: "#073642",
-        secondary: "#c0c4c4",
-        glow: false
-    },
-    {
-        name: "Solarized Light",
-        primary: "#eee8d5",
-        secondary: "#3b4d53",
-        glow: false
-    },
-    {
-        name: "Amber CRT",
-        primary: "#1c1c1c",
-        secondary: "#ff7300",
-        glow: true
-    },
-    {
-        name: "Green CRT",
-        primary: "#1c1c1c",
-        secondary: "#03ff05",
-        glow: true
-    },
-    {
-        name: "Hot Dog Stand",
-        primary: "#fdfc00",
-        secondary: "#ff0000",
-        glow: false
-    },
-    {
-        name: "OutRun",
-        primary: "#1e023b",
-        secondary: "#ff00de",
-        glow: true
-    },
-    {
-        name: "Please let my eyes have a break",
-        primary: "#ffffff",
-        secondary: "#000000",
-        glow: false
-    },
-    {
-        name: "Please let my eyes have a break (but in dark mode)",
-        primary: "#000000",
-        secondary: "#ffffff",
-        glow: false
-    },
+const _internalColors: ColorScheme[] = [
+    new ColorScheme(
+        "Default",
+        "#3866af",
+        "#ffebb5",
+        false
+    ),
+    new ColorScheme(
+        "Solarized Dark",
+        "#073642",
+        "#c0c4c4",
+        false
+    ),
+    new ColorScheme(
+        "Solarized Light",
+        "#eee8d5",
+        "#3b4d53",
+        false
+    ),
+    new ColorScheme(
+        "Amber CRT",
+        "#1c1c1c",
+        "#ff7300",
+        true
+    ),
+    new ColorScheme(
+        "Green CRT",
+        "#1c1c1c",
+        "#03ff05",
+        true
+    ),
+    new ColorScheme(
+        "Hot Dog Stand",
+        "#fdfc00",
+        "#ff0000",
+        false
+    ),
+    new ColorScheme(
+        "OutRun",
+        "#1e023b",
+        "#ff00de",
+        true
+    ),
+    new ColorScheme(
+        "Please let my eyes have a break",
+        "#ffffff",
+        "#000000",
+        false
+    ),
+    new ColorScheme(
+        "Please let my eyes have a break (but in dark mode)",
+        "#000000",
+        "#ffffff",
+        false
+    ),
 ];
+
+export const DefaultColorsMap: Map<string, ColorScheme> =  new Map(_internalColors.map(scheme => [stripUnsafeCharacters(scheme.name), scheme]));

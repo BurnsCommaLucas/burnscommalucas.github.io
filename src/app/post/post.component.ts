@@ -54,7 +54,7 @@ export class PostComponent implements AfterContentInit {
     // Compensate for lag from loading things like images
     anchor ? setTimeout(() => {
       // Try to scroll the requested frament into view
-      element = document.getElementById(this.scrapeAnchorId(anchor));
+      element = document.getElementById(anchor.replace(/^#/, ''));
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
         // stop all highlight animations
@@ -63,13 +63,5 @@ export class PostComponent implements AfterContentInit {
         highlightElement(element)
       }
     }, delay) : {};
-  }
-
-  private scrapeAnchorId(param: string): string {
-    let decoded = param;
-
-    if (decoded[0] == "#") decoded = decoded.substring(1);
-
-    return decoded;
   }
 }

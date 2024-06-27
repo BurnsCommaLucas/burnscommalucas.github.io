@@ -1,6 +1,4 @@
-import { Route } from "@angular/router";
 import { POST_LOCATION_PREFIX } from "./app-constants";
-import { PostComponent } from "./post/post.component";
 import { stripUnsafeCharacters } from "./helpers";
 
 export class PostDefiniton {
@@ -12,15 +10,6 @@ export class PostDefiniton {
 
     safeTitle(): string {
         return stripUnsafeCharacters(this.title);
-    }
-
-    toRoute(): Route {
-        return {
-            path: this.title,
-            title: `Lucas Burns - ${this.title}`,
-            data: this,
-            component: PostComponent
-        };
     }
 
     filePath(): string {

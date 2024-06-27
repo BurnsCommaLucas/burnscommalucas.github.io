@@ -51,15 +51,15 @@ export class PostComponent implements AfterContentInit {
       }, 2400);
     };
 
+    // Try to scroll the requested frament into view
     // Compensate for lag from loading things like images
     anchor ? setTimeout(() => {
-      // Try to scroll the requested frament into view
       element = document.getElementById(anchor.replace(/^#/, ''));
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
         // stop all highlight animations
         stopAllHighlights();
-        // add the highlihg animation to show the user what item they should look at
+        // add the highlight animation to show the user what item they should look at
         highlightElement(element)
       }
     }, delay) : {};

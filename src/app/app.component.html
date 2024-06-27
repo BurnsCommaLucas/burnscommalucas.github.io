@@ -1,14 +1,13 @@
 <body>
-	<nav class="navbar navbar-expand-md navbar-toggleable-md">
-		<button class="navbar-toggler navbar-toggler-right" type="button"
-			(click)="isNavbarCollapsed = !isNavbarCollapsed" aria-controls="exCollapsingNavbar2" aria-expanded="false"
-			aria-label="Toggle navigation">
+	<nav class="navbar navbar-expand-md navbar-toggleable-md nav-pills">
+		<a class="navbar-brand" routerLink="/">lucas.burns.io</a>
+		<button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed"
+			aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
 			<fa-icon [icon]="bars"></fa-icon>
 		</button>
-		<a class="navbar-brand" routerLink="./home">lucas.burns.io</a>
 		<div [ngbCollapse]="isNavbarCollapsed" class="collapse navbar-collapse" id="exCollapsingNavbar2">
 			<div class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link" routerLink="/home" (click)="isNavbarCollapsed = true">Home</a>
+				<li class="nav-item"><a class="nav-link" routerLink="/" (click)="isNavbarCollapsed = true">Home</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" routerLink="/about"
 						(click)="isNavbarCollapsed = true">About</a></li>
@@ -18,17 +17,17 @@
 				<li class="nav-item"><a class="nav-link" routerLink="/posts"
 						(click)="isNavbarCollapsed = true">Posts</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" routerLink="/colors" (click)="isNavbarCollapsed = true">
-						<fa-icon [icon]="palette"></fa-icon>
-					</a></li>
+				<li class="nav-item">
+					<fa-icon class="nav-link" routerLink="/colors" (click)="isNavbarCollapsed = true"
+						[icon]="palette"></fa-icon>
+				</li>
 			</div>
 		</div>
 	</nav>
-	<div class="container" style="padding-top: 1em;">
+	<div class="container main-content">
 		<router-outlet></router-outlet>
 	</div>
 </body>
-<!--Content Container-->
 <footer class="footer" id="contact-icons">
 	<!-- Mail bots ruin everything, so no more mailto link :shrug: Just go to one of the other links if you really want to get in touch-->
 	<a href="https://github.com/burnscommalucas" target="_blank" name="GitHub">
@@ -42,4 +41,3 @@
 		<fa-icon [icon]="twitch" size="2x"></fa-icon>
 	</a> -->
 </footer>
-<!--End Content-->

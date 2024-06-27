@@ -7,7 +7,8 @@ import { DefaultColorsMap } from './DefaultColors';
 
 @Component({
 	selector: 'app-colors',
-	templateUrl: './colors.component.html'
+	templateUrl: './colors.component.html',
+	styleUrl: './colors.component.css'
 })
 export class ColorsComponent {
 	colorSchemes: ColorScheme[] = [...DefaultColorsMap.values()];

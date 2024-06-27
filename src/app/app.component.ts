@@ -6,7 +6,8 @@ import { DefaultColorsMap } from './colors/DefaultColors';
 
 @Component({
 	selector: 'app-root',
-	templateUrl: './app.component.html'
+	templateUrl: './app.component.html',
+	styleUrl: './app.component.css'
 })
 export class AppComponent {
 	isNavbarCollapsed = true;

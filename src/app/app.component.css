@@ -1,0 +1,55 @@
+nav {
+    padding: 0.5em 1em;
+}
+
+body {
+    overflow: hidden;
+}
+
+.main-content{
+	padding-top: 1em; 
+	width: 767px;
+}
+
+@media (max-width: 767px) {
+	.main-content {
+		width: 100%;
+	}
+}
+
+.navbar,
+button>fa-icon,
+li.nav-item>a,
+li.nav-item>fa-icon {
+	background: var(--secondary);
+	color: var(--primary);
+}
+
+/* fixes bootstrap trying to color nav items black when focused */
+li.nav-item>a:focus:not(:hover),
+li.nav-item>fa-icon:focus:not(:hover) {
+	background: var(--secondary);
+	color: var(--primary);
+}
+
+li.nav-item>a.nav-link,
+li.nav-item>fa-icon.nav-link {
+	padding-inline-start: 10px;
+}
+
+li.nav-item>a:hover,
+li.nav-item>fa-icon:hover {
+	background-color: var(--primary);
+	color: var(--secondary);
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+	color: var(--primary);
+	background: var(--secondary);
+	text-decoration: none;
+}
+
+.navbar-toggler {
+    border: none;
+}

@@ -4,6 +4,7 @@
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "esModuleInterop": true,
     "declaration": false,
     "module": "es2020",
     "moduleResolution": "node",
@@ -13,7 +14,6 @@
     "typeRoots": [
       "node_modules/@types"
     ],
-    "downlevelIteration": true,
     "lib": [
       "es2019",
       "dom",

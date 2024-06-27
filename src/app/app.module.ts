@@ -1,11 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+import { NgbCollapseModule, NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { appRoutes } from './routes';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ColorPickerModule } from 'ngx-color-picker';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MarkdownModule, MARKED_OPTIONS, MarkedOptions, MarkedRenderer } from 'ngx-markdown';
 import { POST_LOCATION_PREFIX } from './app-constants';
@@ -22,44 +22,41 @@ import { stripUnsafeCharacters } from './helpers';
 import { LocationStrategy } from '@angular/common';
 import { PathPreserveQueryLocationStrategy } from './preserve-query-params';
 
-@NgModule({
-	declarations: [
-		AppComponent,
-		AboutComponent,
-		ColorsComponent,
-		HomeComponent,
-		ResumeComponent,
-		BlogComponent,
-		PostComponent
-	],
-	imports: [
-		BrowserModule,
-		HttpClientModule,
-		NgbModule,
-		FontAwesomeModule,
-		FormsModule,
-		ColorPickerModule,
-		MarkdownModule.forRoot({
-			markedOptions: {
-				provide: MARKED_OPTIONS,
-				useFactory: markedOptionsFactory
-			},
-			markedExtensions: [
-				markedFootnote()
-			]
-		}),
-		RouterModule.forRoot(appRoutes, {
-			anchorScrolling: 'enabled',
-			onSameUrlNavigation: 'reload',
-			scrollPositionRestoration: 'enabled'
-		})
-	],
-	bootstrap: [AppComponent],
-	exports: [AppComponent],
-	providers: [
-		{ provide: LocationStrategy, useClass: PathPreserveQueryLocationStrategy }
-	]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        AboutComponent,
+        ColorsComponent,
+        HomeComponent,
+        ResumeComponent,
+        BlogComponent,
+        PostComponent,
+    ],
+    bootstrap: [AppComponent],
+    exports: [AppComponent], 
+    imports: [
+        BrowserModule,
+        NgbNavModule,
+        NgbCollapseModule,
+        FontAwesomeModule,
+        FormsModule,
+        ColorPickerModule,
+        MarkdownModule.forRoot({
+            markedOptions: {
+                provide: MARKED_OPTIONS,
+                useFactory: markedOptionsFactory
+            },
+            markedExtensions: [
+                markedFootnote()
+            ]
+        }),
+        RouterModule.forRoot(appRoutes, {
+            anchorScrolling: 'enabled',
+            onSameUrlNavigation: 'reload',
+            scrollPositionRestoration: 'enabled'
+        })], providers: [
+        { provide: LocationStrategy, useClass: PathPreserveQueryLocationStrategy },
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
 
 export function markedOptionsFactory(): MarkedOptions {

@@ -9,6 +9,11 @@
     text-shadow: none !important;
 }
 
+.art-text>div>a {
+	color: var(--dark);
+	background-color: var(--bright);
+}
+
 @media (max-width: 575px) {
     .art-text {
         text-align: center;

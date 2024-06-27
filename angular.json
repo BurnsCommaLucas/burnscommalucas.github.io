@@ -11,12 +11,16 @@
       "schematics": {},
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/personal-site",
+            "outputPath": {
+              "base": "dist/personal-site"
+            },
             "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "src/polyfills.ts",
+              "@angular/localize/init"
+            ],
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/assets",
@@ -32,19 +36,19 @@
               }
             ],
             "styles": [
-              "node_modules/katex/dist/katex.min.css"
+              "node_modules/katex/dist/katex.min.css",
+              "src/assets/styles.css"
             ],
             "scripts": [
               "node_modules/marked/marked.min.js",
               "node_modules/katex/dist/katex.min.js",
               "node_modules/katex/dist/contrib/auto-render.min.js"
             ],
-            "vendorChunk": true,
             "extractLicenses": false,
-            "buildOptimizer": false,
             "sourceMap": true,
             "optimization": false,
-            "namedChunks": true
+            "namedChunks": true,
+            "browser": "src/main.ts"
           },
           "configurations": {
             "production": {
@@ -59,8 +63,6 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",

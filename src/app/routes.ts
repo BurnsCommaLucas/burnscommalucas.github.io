@@ -28,7 +28,7 @@ export const appRoutes: Routes = [
 	},
 	{
 		path: 'posts/:postTitle',
-		pathMatch: 'full',
+		pathMatch: 'prefix',
 		component: PostComponent,
 		data: { title: 'Lucas Burns - ' }
 	},
